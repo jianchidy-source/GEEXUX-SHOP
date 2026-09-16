@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GEEXUX SHOP</title>
+<style>
+body{margin:0;background:#090909;color:white;font-family:Arial;text-align:center}
+header{padding:25px;border-bottom:1px solid #333}h1{color:#d4af37;letter-spacing:3px}
+nav{padding:15px}button{background:#d4af37;border:0;padding:11px 16px;margin:5px;border-radius:8px;font-weight:bold}
+.hero{padding:40px 15px;background:#151515}.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;padding:25px;max-width:1100px;margin:auto}
+.card{background:#151515;border:1px solid #333;border-radius:14px;padding:20px}.icon{font-size:50px}.price{color:#d4af37;font-weight:bold;font-size:20px}
+footer{padding:30px;color:#bbb}
+</style></head>
+<body>
+<header><h1>GEEXUX SHOP</h1><p>Luxury Electronics • Clothes • Shoes • Bags</p></header>
+<nav>
+<button onclick="show('all')">All</button><button onclick="show('Electronics')">Electronics</button>
+<button onclick="show('Clothes')">Clothes</button><button onclick="show('Shoes')">Shoes</button><button onclick="show('Bags')">Bags</button><button onclick="show('Watches')">Watches</button>
+</nav>
+<section class="hero"><h2>Welcome to GEEXUX SHOP</h2><p>Product price includes KSh 350 transportation.</p></section>
+<div class="products" id="products"></div>
+<footer><p>Payment: Pochi la Biashara</p><p>Business Number: 0705241317</p></footer>
+<script>
+const items=[
+['Venom Nike Shoes','Shoes',2350,'👟'],['Air Force Shoes','Shoes',2150,'👟'],['Casual Men's Sneakers','Shoes',2031,'👟'],['Men's Sport Sneakers','Shoes',1355,'👟'],['Men's Casual Shoes','Shoes',1450,'👞'],['Ladies' Sneakers','Shoes',1179,'👟'],['Ladies' Sandals','Shoes',899,'🩴'],
+['Men's Hoodie','Clothes',1395,'🧥'],['Men's Casual Shirt','Clothes',1149,'👕'],['Men's Cargo Pants','Clothes',1150,'👖'],['Men's Tank Top','Clothes',616,'👕'],['Ladies' T-shirt Set','Clothes',1249,'👚'],
+['Laptop Backpack','Bags',930,'🎒'],['Ladies' Handbag','Bags',1169,'👜'],['Ladies' Handbag Set','Bags',1141,'👜'],['Women's Travel Backpack','Bags',1049,'🎒'],['Large Travel/Gym Bag','Bags',1820,'🧳'],['Men's Crossbody Bag','Bags',770,'👜'],
+['Men's Business Quartz Watch','Watches',819,'⌚'],['Men's Sports Watch','Watches',619,'⌚'],['Ladies' 5-Piece Watch Set','Watches',808,'⌚'],['Fashion Watch','Watches',617,'⌚'],['Watch & Bracelet Set','Watches',893,'⌚'],
+['Bluetooth Earbuds','Electronics',672,'🎧'],['Wireless Earphones','Electronics',889,'🎧'],['40,000mAh Power Bank','Electronics',2369,'🔋'],['Bluetooth/Solar Radio','Electronics',1248,'📻'],['Wi-Fi Range Extender','Electronics',1490,'📶']];
+function show(cat){products.innerHTML=items.filter(x=>cat=='all'||x[1]==cat).map(x=>`<div class="card"><div class="icon">${x[3]}</div><h3>${x[0]}</h3><p>${x[1]}</p><p class="price">KES ${x[2].toLocaleString()}</p><button onclick="alert('Add to cart: ${x[0]}')">Add to Cart</button></div>`).join('')}
+show('all');
+</script></body></html>
